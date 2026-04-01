@@ -16,26 +16,26 @@ public class GuardPatrol : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // Start by moving toward WaypointA
         currentTarget = waypointA;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (currentTarget == null) return;
 
-        // Move toward current waypoint
-        transform.position = Vector2.MoveTowards(
-            transform.position,
+        // Move via physics so the guard respects wall colliders
+        Vector2 newPosition = Vector2.MoveTowards(
+            rb.position,
             currentTarget.position,
-            patrolSpeed * Time.deltaTime
+            patrolSpeed * Time.fixedDeltaTime
         );
+        rb.MovePosition(newPosition);
 
-        // If close enough to current waypoint, switch to the other one
-        float distanceToTarget = Vector2.Distance(transform.position, currentTarget.position);
+        // Switch waypoint when close enough
+        float distanceToTarget = Vector2.Distance(rb.position, currentTarget.position);
         if (distanceToTarget < 0.1f)
         {
+            // Toggle between waypointA and waypointB
             currentTarget = (currentTarget == waypointA) ? waypointB : waypointA;
         }
     }
