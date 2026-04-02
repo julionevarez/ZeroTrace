@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2ef0dc6b57139e24ebd79a3df84dd73a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - lootedSprite: {fileID: 21300000, guid: 6cedbb33fb6662c4493d9f5752e5961f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
