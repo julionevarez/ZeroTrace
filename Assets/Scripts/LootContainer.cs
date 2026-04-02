@@ -21,16 +21,13 @@ public class LootContainer : MonoBehaviour
     }
 
     void Update()
+{
+    if (playerInRange && !isLooted && Input.GetKeyDown(KeyCode.E))
     {
-        // If player is in range and presses E, trigger the minigame
-        if (playerInRange && !isLooted && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Starting loot minigame!");
-            // Minigame will be triggered here in Step 7
-            // For now collect directly to test
-            CollectLoot();
-        }
+        // Trigger the minigame instead of collecting directly
+        LootMinigame.Instance.StartMinigame(this);
     }
+}
 
     void OnTriggerEnter2D(Collider2D other)
     {
