@@ -10,9 +10,11 @@ public class LootMinigame : MonoBehaviour
     // ── UI REFERENCES ────────────────────────────────────────────
     [SerializeField] private GameObject minigamePanel;
     [SerializeField] private TextMeshProUGUI promptText;
+    [SerializeField] private Canvas minigameCanvas;
 
     // ── SETTINGS ────────────────────────────────────────────────
     [SerializeField] private int sequenceLength = 4;
+    [SerializeField] private float yOffset = 1.5f; // How far above the crate
 
     // ── PRIVATE STATE ────────────────────────────────────────────
     private KeyCode[] sequence;
@@ -20,18 +22,17 @@ public class LootMinigame : MonoBehaviour
     private bool isActive = false;
     private LootContainer currentContainer;
 
-    // Arrow key display symbols
     private string GetArrowSymbol(KeyCode key)
-{
-    switch (key)
     {
-        case KeyCode.UpArrow:    return "⬆";
-        case KeyCode.DownArrow:  return "⬇";
-        case KeyCode.LeftArrow:  return "⬅";
-        case KeyCode.RightArrow: return "➡";
-        default: return "?";
+        switch (key)
+        {
+            case KeyCode.UpArrow:    return "⬆";
+            case KeyCode.DownArrow:  return "⬇";
+            case KeyCode.LeftArrow:  return "⬅";
+            case KeyCode.RightArrow: return "➡";
+            default: return "?";
+        }
     }
-}
 
     // ── UNITY METHODS ────────────────────────────────────────────
 
@@ -47,7 +48,6 @@ public class LootMinigame : MonoBehaviour
     {
         if (!isActive) return;
 
-        // Check for arrow key input
         KeyCode[] arrowKeys = {
             KeyCode.UpArrow,
             KeyCode.DownArrow,
@@ -67,14 +67,21 @@ public class LootMinigame : MonoBehaviour
 
     // ── PUBLIC METHODS ───────────────────────────────────────────
 
-    // Called by LootContainer when player presses E
     public void StartMinigame(LootContainer container)
     {
         currentContainer = container;
         currentIndex = 0;
         isActive = true;
 
-        // Disable player movement while minigame is active
+        // Position canvas above the crate
+        Vector3 cratePos = container.transform.position;
+        minigameCanvas.transform.position = new Vector3(
+            cratePos.x,
+            cratePos.y + yOffset,
+            cratePos.z
+        );
+
+        // Disable player movement
         PlayerController pc = FindObjectOfType<PlayerController>();
         if (pc != null) pc.canMove = false;
 
@@ -89,7 +96,6 @@ public class LootMinigame : MonoBehaviour
         for (int i = 0; i < sequenceLength; i++)
             sequence[i] = arrows[Random.Range(0, arrows.Length)];
 
-        // Show the panel and update prompt
         minigamePanel.SetActive(true);
         UpdatePromptText();
     }
@@ -100,19 +106,14 @@ public class LootMinigame : MonoBehaviour
     {
         if (key == sequence[currentIndex])
         {
-            // Correct key pressed
             currentIndex++;
             UpdatePromptText();
 
             if (currentIndex >= sequenceLength)
-            {
-                // All keys matched - success
                 MinigameSuccess();
-            }
         }
         else
         {
-            // Wrong key pressed - failure
             MinigameFailure();
         }
     }
@@ -123,13 +124,10 @@ public class LootMinigame : MonoBehaviour
         for (int i = 0; i < sequence.Length; i++)
         {
             if (i < currentIndex)
-                // Already entered correctly - show in gray
                 display += "<color=#888888>" + GetArrowSymbol(sequence[i]) + "</color> ";
             else if (i == currentIndex)
-                // Current key to press - show in white/bold
                 display += "<b>" + GetArrowSymbol(sequence[i]) + "</b> ";
             else
-                // Upcoming keys - show dimmed
                 display += "<color=#444444>" + GetArrowSymbol(sequence[i]) + "</color> ";
         }
         promptText.text = display;
@@ -145,7 +143,6 @@ public class LootMinigame : MonoBehaviour
     void MinigameFailure()
     {
         Debug.Log("Minigame failed! Guard alerted.");
-        // Alert nearest guard - we'll expand this later
         EndMinigame();
     }
 
@@ -154,8 +151,7 @@ public class LootMinigame : MonoBehaviour
         isActive = false;
         minigamePanel.SetActive(false);
 
-        // Re-enable player movement
-        PlayerController pc = FindObjectOfType<PlayerController>();
+        PlayerController pc = FindFirstObjectByType<PlayerController>();
         if (pc != null) pc.canMove = true;
     }
 }

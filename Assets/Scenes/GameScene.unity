@@ -4535,7 +4535,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &19245917
 Canvas:
   m_ObjectHideFlags: 0
@@ -4545,8 +4545,8 @@ Canvas:
   m_GameObject: {fileID: 19245914}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 2
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4568,7 +4568,7 @@ RectTransform:
   m_GameObject: {fileID: 19245914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 527836389}
@@ -4577,8 +4577,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &233353569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5050,7 +5050,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LootMinigame
   minigamePanel: {fileID: 527836388}
   promptText: {fileID: 1578650026}
+  minigameCanvas: {fileID: 19245917}
   sequenceLength: 4
+  yOffset: 1.5
 --- !u!4 &613096976
 Transform:
   m_ObjectHideFlags: 0
@@ -9968,7 +9970,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9662dc4651eec5740bfa6ac3f96d63fc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d50e323120050d49a90c36aede9475f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
