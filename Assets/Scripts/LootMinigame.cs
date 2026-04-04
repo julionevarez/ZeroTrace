@@ -11,15 +11,23 @@ public class LootMinigame : MonoBehaviour
     [SerializeField] private GameObject minigamePanel;
     [SerializeField] private TextMeshProUGUI promptText;
     [SerializeField] private Canvas minigameCanvas;
+    [SerializeField] private Image minigameTimerFill;
 
     // ── SETTINGS ────────────────────────────────────────────────
     [SerializeField] private int sequenceLength = 4;
-    [SerializeField] private float yOffset = 1.5f; // How far above the crate
+    [SerializeField] private float yOffset = 1.5f;
+    [SerializeField] private float minigameTimeLimit = 5f;
+
+    // ── MINIGAME TIMER COLORS ────────────────────────────────────
+    private Color timerGreen  = new Color(0f, 1f, 0f, 1f);
+    private Color timerOrange = new Color(1f, 0.5f, 0f, 1f);
+    private Color timerRed    = new Color(1f, 0f, 0f, 1f);
 
     // ── PRIVATE STATE ────────────────────────────────────────────
     private KeyCode[] sequence;
     private int currentIndex = 0;
     private bool isActive = false;
+    private float minigameTimeRemaining;
     private LootContainer currentContainer;
 
     private string GetArrowSymbol(KeyCode key)
@@ -48,6 +56,32 @@ public class LootMinigame : MonoBehaviour
     {
         if (!isActive) return;
 
+        // Count down minigame timer
+        minigameTimeRemaining -= Time.deltaTime;
+        minigameTimeRemaining = Mathf.Max(minigameTimeRemaining, 0f);
+
+        // Update minigame timer bar
+        float fillAmount = minigameTimeRemaining / minigameTimeLimit;
+        minigameTimerFill.fillAmount = fillAmount;
+
+        // MGS-style color on minigame timer
+        if (fillAmount > 0.5f)
+            minigameTimerFill.color = timerGreen;
+        else if (fillAmount > 0.25f)
+            minigameTimerFill.color = timerOrange;
+        else
+            minigameTimerFill.color = timerRed;
+
+        // Timer ran out — lock the crate
+        if (minigameTimeRemaining <= 0f)
+        {
+            Debug.Log("Minigame timed out! Crate locked.");
+            currentContainer.LockCrate();
+            EndMinigame();
+            return;
+        }
+
+        // Check arrow key input
         KeyCode[] arrowKeys = {
             KeyCode.UpArrow,
             KeyCode.DownArrow,
@@ -72,6 +106,7 @@ public class LootMinigame : MonoBehaviour
         currentContainer = container;
         currentIndex = 0;
         isActive = true;
+        minigameTimeRemaining = minigameTimeLimit;
 
         // Position canvas above the crate
         Vector3 cratePos = container.transform.position;
@@ -82,7 +117,7 @@ public class LootMinigame : MonoBehaviour
         );
 
         // Disable player movement
-        PlayerController pc = FindObjectOfType<PlayerController>();
+        PlayerController pc = FindFirstObjectByType<PlayerController>();
         if (pc != null) pc.canMove = false;
 
         // Generate random sequence
@@ -97,6 +132,8 @@ public class LootMinigame : MonoBehaviour
             sequence[i] = arrows[Random.Range(0, arrows.Length)];
 
         minigamePanel.SetActive(true);
+        minigameTimerFill.fillAmount = 1f;
+        minigameTimerFill.color = timerGreen;
         UpdatePromptText();
     }
 
@@ -142,7 +179,8 @@ public class LootMinigame : MonoBehaviour
 
     void MinigameFailure()
     {
-        Debug.Log("Minigame failed! Guard alerted.");
+        Debug.Log("Minigame failed! Crate locked.");
+        currentContainer.LockCrate();
         EndMinigame();
     }
 
