@@ -57,6 +57,11 @@ public class GameTimer : MonoBehaviour
             timerLabel.text = "!! " + seconds + "s !!";
         }
 
+        if (timeRemaining <= 10f)
+        {
+        AudioManager.Instance.PlayTimerWarning();
+        }
+
         // Time ran out
         if (timeRemaining <= 0f)
         {

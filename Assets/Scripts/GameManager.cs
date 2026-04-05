@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        // Set up singleton
         if (Instance == null)
             Instance = this;
         else
@@ -29,18 +30,28 @@ public class GameManager : MonoBehaviour
 
     // ── PUBLIC METHODS ───────────────────────────────────────────
 
+    // Called by GuardDetection when player enters line of sight
     public void PlayerSpotted()
     {
         if (isGameOver) return;
+
+        // Play MGS alert immediately then COD voice after delay
+        AudioManager.Instance.PlayGuardAlert();
+        AudioManager.Instance.PlayMissionFailed();
         LoseGame("You were spotted");
     }
 
+    // Called when player reaches extraction zone with loot
     public void WinGame()
     {
         if (isGameOver) return;
         isGameOver = true;
 
-        // Show win panel with stats
+        // Stop timer warning loop and play mission complete
+        AudioManager.Instance.StopTimerWarning();
+        AudioManager.Instance.PlayMissionComplete();
+
+        // Show win panel with loot stats
         winStatsText.text = "Loot Collected: " + lootCollected;
         winPanel.SetActive(true);
 
@@ -51,10 +62,14 @@ public class GameManager : MonoBehaviour
         Debug.Log("You extracted successfully!");
     }
 
+    // Called when timer runs out or player is spotted
     public void LoseGame(string reason = "Timer ran out")
     {
         if (isGameOver) return;
         isGameOver = true;
+
+        // Stop timer warning loop
+        AudioManager.Instance.StopTimerWarning();
 
         // Show lose panel with reason
         loseReasonText.text = reason;
@@ -67,6 +82,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game over: " + reason);
     }
 
+    // Called by restart buttons on win/lose screens
     public void RestartGame()
     {
         isGameOver = false;

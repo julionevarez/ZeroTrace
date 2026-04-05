@@ -23,19 +23,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Don't read input if movement is disabled (e.g. during minigame)
-        if (!canMove)
-        {
-            moveInput = Vector2.zero;
-            return;
-        }
+    if (!canMove)
+    {
+        moveInput = Vector2.zero;
+        AudioManager.Instance.SetFootsteps(false);
+        return;
+    }
 
-        // Read raw WASD / arrow key input (-1, 0, or 1 on each axis)
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+    float moveX = Input.GetAxisRaw("Horizontal");
+    float moveY = Input.GetAxisRaw("Vertical");
+    moveInput = new Vector2(moveX, moveY).normalized;
 
-        // Normalize so diagonal movement isn't faster than cardinal
-        moveInput = new Vector2(moveX, moveY).normalized;
+    // Play footsteps when moving
+    AudioManager.Instance.SetFootsteps(moveInput.magnitude > 0);
     }
 
     void FixedUpdate()

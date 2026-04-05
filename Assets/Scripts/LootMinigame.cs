@@ -135,6 +135,8 @@ public class LootMinigame : MonoBehaviour
         minigameTimerFill.fillAmount = 1f;
         minigameTimerFill.color = timerGreen;
         UpdatePromptText();
+
+        AudioManager.Instance.PlayBoxOpen();
     }
 
     // ── PRIVATE METHODS ──────────────────────────────────────────
@@ -175,6 +177,8 @@ public class LootMinigame : MonoBehaviour
         Debug.Log("Minigame success!");
         currentContainer.CollectLoot();
         EndMinigame();
+
+        AudioManager.Instance.PlayLootCollected();
     }
 
     void MinigameFailure()
@@ -182,6 +186,7 @@ public class LootMinigame : MonoBehaviour
         Debug.Log("Minigame failed! Crate locked.");
         currentContainer.LockCrate();
         EndMinigame();
+        AudioManager.Instance.PlayLootFail();
     }
 
     void EndMinigame()
