@@ -3,12 +3,11 @@ using UnityEngine;
 public class GuardPatrol : MonoBehaviour
 {
     // ── SETTINGS ────────────────────────────────────────────────
-    [SerializeField] private Transform waypointA;
-    [SerializeField] private Transform waypointB;
+    [SerializeField] private Transform[] waypoints;
     [SerializeField] private float patrolSpeed = 2f;
 
     // ── PRIVATE STATE ────────────────────────────────────────────
-    private Transform currentTarget;
+    private int currentWaypointIndex = 0;
     private Rigidbody2D rb;
 
     // ── UNITY METHODS ────────────────────────────────────────────
@@ -16,27 +15,26 @@ public class GuardPatrol : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentTarget = waypointA;
     }
 
     void FixedUpdate()
     {
-        if (currentTarget == null) return;
+        if (waypoints.Length == 0) return;
 
-        // Move via physics so the guard respects wall colliders
+        Transform target = waypoints[currentWaypointIndex];
+
+        // Move toward current waypoint
         Vector2 newPosition = Vector2.MoveTowards(
             rb.position,
-            currentTarget.position,
+            target.position,
             patrolSpeed * Time.fixedDeltaTime
         );
         rb.MovePosition(newPosition);
 
-        // Switch waypoint when close enough
-        float distanceToTarget = Vector2.Distance(rb.position, currentTarget.position);
-        if (distanceToTarget < 0.1f)
+        // Switch to next waypoint when close enough
+        if (Vector2.Distance(rb.position, target.position) < 0.1f)
         {
-            // Toggle between waypointA and waypointB
-            currentTarget = (currentTarget == waypointA) ? waypointB : waypointA;
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
     }
 }
