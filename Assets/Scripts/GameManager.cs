@@ -1,24 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     // ── SINGLETON ────────────────────────────────────────────────
-    // Allows any script to access GameManager.Instance from anywhere
     public static GameManager Instance;
 
     // ── GAME STATE ───────────────────────────────────────────────
     public int lootCollected = 0;
     public bool isGameOver = false;
 
-    // ── REFERENCES ───────────────────────────────────────────────
+    // ── UI REFERENCES ────────────────────────────────────────────
+    [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private TextMeshProUGUI winStatsText;
+    [SerializeField] private TextMeshProUGUI loseReasonText;
 
     // ── UNITY METHODS ────────────────────────────────────────────
 
     void Awake()
     {
-        // Set up singleton — only one GameManager can exist
         if (Instance == null)
             Instance = this;
         else
@@ -27,37 +29,48 @@ public class GameManager : MonoBehaviour
 
     // ── PUBLIC METHODS ───────────────────────────────────────────
 
-   // Called when player is spotted by a guard
-public void PlayerSpotted()
-{
-    if (isGameOver) return;
+    public void PlayerSpotted()
+    {
+        if (isGameOver) return;
+        LoseGame("You were spotted");
+    }
 
-    Debug.Log("Player spotted! Game over.");
-    LoseGame();
-}
-
-    // Called when player reaches extraction with loot
     public void WinGame()
     {
         if (isGameOver) return;
         isGameOver = true;
+
+        // Show win panel with stats
+        winStatsText.text = "Loot Collected: " + lootCollected;
+        winPanel.SetActive(true);
+
+        // Stop player movement
+        PlayerController pc = FindFirstObjectByType<PlayerController>();
+        if (pc != null) pc.canMove = false;
+
         Debug.Log("You extracted successfully!");
-        // We'll add UI here in Week 2
     }
 
-    // Called when timer runs out
-    public void LoseGame()
+    public void LoseGame(string reason = "Timer ran out")
     {
         if (isGameOver) return;
         isGameOver = true;
-        Debug.Log("You lost!");
-        // We'll add UI here in Week 2
+
+        // Show lose panel with reason
+        loseReasonText.text = reason;
+        losePanel.SetActive(true);
+
+        // Stop player movement
+        PlayerController pc = FindFirstObjectByType<PlayerController>();
+        if (pc != null) pc.canMove = false;
+
+        Debug.Log("Game over: " + reason);
     }
 
-    // Restart the current scene
     public void RestartGame()
     {
         isGameOver = false;
+        lootCollected = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
