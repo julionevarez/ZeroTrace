@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f4f6bf40e5f872d47ac0fbfce9561f6f
+guid: a3b7ed6d5d98d6e49a089e3bdf026d8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7340594429859830501
-    second: TileWall_0
+      213: 5212978387452125785
+    second: guard_left_profile_0
+  - first:
+      213: -3524604618301221878
+    second: guard_left_profile_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileWall_0
+      name: guard_left_profile_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 7
+        y: 6
+        width: 45
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b156ef71248f02a90800000000000000
-      internalID: -7340594429859830501
+      spriteID: 9526fdd4938385840800000000000000
+      internalID: 5212978387452125785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard_left_profile_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 58
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04547816c6161fc0800000000000000
+      internalID: -3524604618301221878
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TileWall_0: -7340594429859830501
+      guard_left_profile_0: 5212978387452125785
+      guard_left_profile_1: -3524604618301221878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

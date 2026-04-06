@@ -265,9 +265,9 @@ CompositeCollider2D:
       - X: -140000000
         Y: 60000000
       - X: -140000000
-        Y: -40000000
+        Y: -30000000
       - X: -130000000
-        Y: -40000000
+        Y: -30000000
       - X: -130000000
         Y: 50000000
       - X: -110000000
@@ -349,8 +349,8 @@ CompositeCollider2D:
       - {x: -10, y: 1.0000294}
       - {x: -10.00003, y: 6}
       - {x: -14, y: 5.999971}
-      - {x: -13.999971, y: -4}
-      - {x: -13, y: -3.999971}
+      - {x: -13.999971, y: -3}
+      - {x: -13, y: -2.999971}
       - {x: -12.99997, y: 5}
       - {x: -11, y: 4.9999704}
       - {x: -10.99997, y: 0}
@@ -1161,16 +1161,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -14, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2460,7 +2450,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 85
     m_Data: {fileID: 11400000, guid: 6ef4106797f1f8a4d81a889def915926, type: 2}
-  - m_RefCount: 89
+  - m_RefCount: 88
     m_Data: {fileID: 11400000, guid: a1b539a07444bdb4fbd084648bec99a8, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 229a4642ba1cd264c93fef8cbbd72120, type: 2}
@@ -2473,7 +2463,7 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 85
     m_Data: {fileID: 21300000, guid: 2ac5059ba89a6314ca410225b9f660c4, type: 3}
-  - m_RefCount: 89
+  - m_RefCount: 88
     m_Data: {fileID: 21300000, guid: a2a1e99b0c06c804e940a1973a89bbb0, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 9016a551dfe49164d8061c53ba3e5108, type: 3}
@@ -2484,7 +2474,7 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 60a955ac198e1324bb5e7a486734d31f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 195
+  - m_RefCount: 194
     m_Data:
       e00: 1
       e01: 0
@@ -2503,7 +2493,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 195
+  - m_RefCount: 194
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2865,6 +2855,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812839392168162307, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903466182705001765, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4723523567433377842, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
       propertyPath: m_Name
       value: LootContainer (5)
@@ -2953,6 +2959,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812839392168162307, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 820485386984684143, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: promptCanvas
+      value: 
+      objectReference: {fileID: 379722748}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903466182705001765, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4723523567433377842, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
       propertyPath: m_Name
       value: LootContainer (1)
@@ -3155,6 +3181,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352002764}
   m_CullTransparentMesh: 1
+--- !u!1 &379722748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 812839392168162307, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+  m_PrefabInstance: {fileID: 233353569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &403728319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,7 +4003,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 150}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527836390
 MonoBehaviour:
@@ -4265,6 +4296,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2903466182705001765, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4356,9 +4395,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuardDetection
   detectionRadius: 3
+  fieldOfView: 90
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!114 &601404936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4380,6 +4424,10 @@ MonoBehaviour:
   - {fileID: 663740134}
   patrolSpeed: 2
   pingPong: 1
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!61 &601404937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4502,7 +4550,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8d59ee67d82c5d7429efdc8ebc92a41a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -4560,9 +4608,9 @@ MonoBehaviour:
   promptText: {fileID: 1578650026}
   minigameCanvas: {fileID: 19245917}
   minigameTimerFill: {fileID: 297429208}
-  sequenceLength: 4
+  sequenceLength: 5
   yOffset: 1.5
-  minigameTimeLimit: 5
+  minigameTimeLimit: 3
 --- !u!4 &613096976
 Transform:
   m_ObjectHideFlags: 0
@@ -10377,6 +10425,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812839392168162307, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903466182705001765, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4723523567433377842, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
       propertyPath: m_Name
       value: LootContainer (3)
@@ -10705,9 +10769,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuardDetection
   detectionRadius: 3
+  fieldOfView: 90
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!114 &1506303870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10727,6 +10796,10 @@ MonoBehaviour:
   - {fileID: 1220233048}
   patrolSpeed: 2
   pingPong: 0
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!61 &1506303871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10849,7 +10922,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8d59ee67d82c5d7429efdc8ebc92a41a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -11017,7 +11090,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8d59ee67d82c5d7429efdc8ebc92a41a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -11036,7 +11109,7 @@ Transform:
   m_GameObject: {fileID: 1531262260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.5, y: 1.8, z: 0}
+  m_LocalPosition: {x: -15.5, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11059,6 +11132,10 @@ MonoBehaviour:
   - {fileID: 1682024243}
   patrolSpeed: 2
   pingPong: 0
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!114 &1531262266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11072,9 +11149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuardDetection
   detectionRadius: 3
+  fieldOfView: 90
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!1001 &1549686743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11083,6 +11165,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812839392168162307, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903466182705001765, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4723523567433377842, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
       propertyPath: m_Name
       value: LootContainer (2)
@@ -11431,7 +11529,7 @@ Transform:
   m_GameObject: {fileID: 1682024242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.5, y: -5.36, z: 0}
+  m_LocalPosition: {x: -15.5, y: -5.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11533,9 +11631,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuardDetection
   detectionRadius: 3
+  fieldOfView: 90
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!114 &1881337302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11555,6 +11658,10 @@ MonoBehaviour:
   - {fileID: 1124248992}
   patrolSpeed: 2
   pingPong: 0
+  spriteUp: {fileID: 21300000, guid: 480b14967cfa88e47a06c2811f4c0ac9, type: 3}
+  spriteDown: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3b7ed6d5d98d6e49a089e3bdf026d8c, type: 3}
+  spriteRight: {fileID: 21300000, guid: 866205a4314e92245a5ee1da9c24a05a, type: 3}
 --- !u!61 &1881337303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11677,7 +11784,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8d59ee67d82c5d7429efdc8ebc92a41a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0840e45160f2f64a8527b13b51ed8d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -12048,7 +12155,7 @@ Transform:
   m_GameObject: {fileID: 1981855099}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.5, y: 6, z: 0}
+  m_LocalPosition: {x: -15.5, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12227,7 +12334,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 96a997167d20f7a4eb34cc1527875496, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 833a26f5810151d4fb39cf7c6d4bb166, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12265,6 +12372,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
+  spriteUp: {fileID: 21300000, guid: ebfa952dcbb3c074ca255b0c726b8aa5, type: 3}
+  spriteDown: {fileID: 21300000, guid: 833a26f5810151d4fb39cf7c6d4bb166, type: 3}
+  spriteLeft: {fileID: 21300000, guid: 0d664447adec30549977afebf7c235ab, type: 3}
+  spriteRight: {fileID: 21300000, guid: 7a4a5a448eb4f73499488794c4fdf1bc, type: 3}
   canMove: 1
 --- !u!1 &2077523765
 GameObject:
@@ -12324,6 +12435,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812839392168162307, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556761996966172961, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903466182705001765, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4723523567433377842, guid: 3d53be19c00ee8f4b85bfd8cf3b9ecfe, type: 3}
       propertyPath: m_Name
       value: LootContainer (4)
