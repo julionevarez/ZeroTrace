@@ -103,6 +103,9 @@ public class LootMinigame : MonoBehaviour
 
     public void StartMinigame(LootContainer container)
     {
+        // Prevent starting a new minigame while one is already active
+        if (isActive) return;
+        
         currentContainer = container;
         currentIndex = 0;
         isActive = true;

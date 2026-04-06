@@ -297,8 +297,8 @@ MonoBehaviour:
     y: 0
     width: 770
     height: 1293.3334
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 1118
+    y: 1063.3334
     width: 581
     height: 228
   m_SerializedDataModeController:
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 42.666668
+    y: 0
     width: 2560
     height: 36
   m_SerializedDataModeController:
@@ -681,8 +681,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 273.33334
-    y: 78.66667
+    x: 274.33334
+    y: 24
     width: 306.66666
     height: 1013.3334
   m_SerializedDataModeController:
@@ -782,8 +782,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1790
-    y: 78.66667
+    x: 1791
+    y: 24
     width: 769
     height: 1267.3334
   m_SerializedDataModeController:
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 78.66667
+    y: 24
     width: 272.33334
     height: 1013.3334
   m_SerializedDataModeController:
@@ -884,27 +884,25 @@ MonoBehaviour:
       m_Data: 38666
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 42052
-    - m_Data: 42056
-    - m_Data: 42116
-    - m_Data: 42118
-    - m_Data: 42120
-    - m_Data: 42122
-    - m_Data: 42124
-    - m_Data: 42126
-    - m_Data: 42128
-    - m_Data: 42130
-    - m_Data: 42132
-    - m_Data: 42134
-    - m_Data: 42136
-    - m_Data: 42138
-    - m_Data: 42140
-    - m_Data: 42142
-    - m_Data: 42144
-    - m_Data: 42146
-    - m_Data: 42148
-    - m_Data: 42150
-    - m_Data: 42152
+    - m_Data: 42366
+    - m_Data: 42438
+    - m_Data: 42440
+    - m_Data: 42442
+    - m_Data: 42444
+    - m_Data: 42446
+    - m_Data: 42448
+    - m_Data: 42450
+    - m_Data: 42452
+    - m_Data: 42454
+    - m_Data: 42456
+    - m_Data: 42458
+    - m_Data: 42460
+    - m_Data: 42462
+    - m_Data: 42464
+    - m_Data: 42466
+    - m_Data: 42468
+    - m_Data: 42470
+    - m_Data: 42472
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -937,29 +935,29 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 42052
-    - m_Data: 42056
-    - m_Data: 42116
-    - m_Data: 42118
-    - m_Data: 42120
-    - m_Data: 42122
-    - m_Data: 42124
-    - m_Data: 42126
-    - m_Data: 42128
-    - m_Data: 42130
-    - m_Data: 42134
-    - m_Data: 42136
-    - m_Data: 42138
-    - m_Data: 42140
-    - m_Data: 42142
-    - m_Data: 42144
-    - m_Data: 42146
-    - m_Data: 42308
-    - m_Data: 42334
+    - m_Data: 42366
+    - m_Data: 42438
+    - m_Data: 42440
+    - m_Data: 42442
+    - m_Data: 42444
+    - m_Data: 42446
+    - m_Data: 42448
+    - m_Data: 42450
+    - m_Data: 42452
+    - m_Data: 42454
+    - m_Data: 42456
+    - m_Data: 42458
+    - m_Data: 42460
+    - m_Data: 42462
+    - m_Data: 42464
+    - m_Data: 42466
+    - m_Data: 42468
+    - m_Data: 42470
+    - m_Data: 42472
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: AudioManager
-      m_OriginalName: AudioManager
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -967,10 +965,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 65628
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 2}
@@ -1036,8 +1034,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 582
-    y: 690.6667
+    x: 1
+    y: 636
     width: 1206
     height: 655.3334
   m_SerializedDataModeController:
@@ -1139,8 +1137,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 582
-    y: 78.66667
+    x: 1
+    y: 24
     width: 1206
     height: 586
   m_SerializedDataModeController:
