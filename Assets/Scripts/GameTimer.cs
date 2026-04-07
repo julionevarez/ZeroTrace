@@ -66,6 +66,7 @@ public class GameTimer : MonoBehaviour
         if (timeRemaining <= 0f)
         {
             isRunning = false;
+            AudioManager.Instance.PlayMissionFailed();
             GameManager.Instance.LoseGame();
         }
     }

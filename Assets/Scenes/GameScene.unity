@@ -10519,7 +10519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa47a17f46540e409072ceb6b08fb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  totalTime: 90
+  totalTime: 15
   timerLabel: {fileID: 489727780}
 --- !u!4 &1191166184
 Transform:
